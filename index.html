@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Am I using the Wii's Internet Channel?</title>
+<meta name="title" content="Am I using the Wii's Internet Channel?">
+<meta name="description" content="Wii browser verification as a service.">
+<meta property="og:type" content="website">
+<!-- Fun fact: The Wii thinks certbot HTTPS certificates are 'outdated', despite itself being the outdated one. -->
+<meta property="og:url" content="http://wiicheck.info">
+<meta property="og:title" content="Am I using the Wii's Internet Channel?">
+<meta property="og:description" content="Wii browser verification as a service.">
+<meta property="og:image" content="http://wiicheck.info/thumbnail.png">
+<meta property="og:site_name" content="wolfgang.space">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="http://wiicheck.info">
+<meta property="twitter:title" content="Am I using the Wii's Internet Channel?">
+<meta property="twitter:description" content="Wii browser verification as a service.">
+<meta property="twitter:image" content="http://wiicheck.info/thumbnail.png">
+<!-- No EMCAScript here! -->
+</head>
+<!-- Making the result a background makes it non-selectable for the full, immersive, failure experience. -->
+<body style="background-image:url('/not-wii.png');background-repeat:no-repeat;background-position:center top;background-color:#ECECEC"></body>
+<!-- Apache2 RewriteCond I use to detect Wiis:
+     %{HTTP_USER_AGENT} ^Opera/9\...\ .*\(Nintendo\ Wii;.*\)$ [NC]
+     Should be solid enough to weed out crazy edge cases. Enjoy! -->
+</html>

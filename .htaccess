@@ -1,0 +1,11 @@
+ErrorDocument 302 /yes/index.html
+ErrorDocument 404 /
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  yes [NC]
+RewriteCond %{HTTP_USER_AGENT} !^Opera/9\...\ .*\(Nintendo\ Wii;.*\)$ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI}  !yes [NC]
+RewriteCond %{HTTP_USER_AGENT} ^Opera/9\...\ .*\(Nintendo\ Wii;.*\)$ [NC]
+RewriteRule ^ /yes [R=302,L]
